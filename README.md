@@ -54,7 +54,15 @@ The 3D engine loads in a separate chunk after the resume renders. Its animation 
 
 ## Hosting
 
-Deploy the contents of `dist/` to a static host such as GitHub Pages, Netlify, or Cloudflare Pages. The relative Vite base supports hosting below a repository path. Build command: `npm run build`. Output directory: `dist`. This repository does not automatically publish a public website.
+The **Deploy resume website** GitHub Actions workflow builds and publishes the site to GitHub Pages. Enable it once:
+
+1. Open the repository’s **Settings → Pages**. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+2. Open **Actions → Deploy resume website → Run workflow**, choose `main`, and click **Run workflow**.
+3. After the workflow succeeds, open the website URL shown in its deployment summary. With the default project settings, the address is `https://roli-matsabe.github.io/Resume-digital/`.
+
+Subsequent pushes to `main` automatically update the site. The first deployment requires GitHub Pages to be enabled in repository settings; committing the workflow alone does not enable hosting. The site and downloadable CV include the contact details supplied in the resume.
+
+The relative Vite base supports hosting below a repository path. Other static hosts can also serve `dist/`; use `npm run build` as the build command and `dist` as the output directory. Publishing the cloud development environment is separate from publishing this website.
 
 ## Cloud workspace
 
